@@ -1,4 +1,4 @@
-Obecnie twoim wyzwaniem jest stworzyć 5 pierwszych stron, mianowicie: 
+ Obecnie twoim wyzwaniem jest stworzyć 5 pierwszych stron, mianowicie: 
 
 1. strona logowania z formularzem logowania, 
 2. strona rejestracji z formularzem rejestracji, 
