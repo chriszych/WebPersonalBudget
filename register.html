@@ -29,7 +29,7 @@
               <a class="nav-link active" aria-current="page" href="./login.html">Logowanie</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalRegister">Rejestracja</a>
+              <a class="nav-link dropdown-item disabled" href="./register.html">Rejestracja</a>
             </li>
           </ul>
         </div>
@@ -39,25 +39,48 @@
   </nav>
 
   
-  <!-- welcomePage -->
-  <main id="welcomePage">
+  <!-- registerPage -->
+  <main id="registerPage">
 
-    <div class="container col-xxl-8 px-4 py-5">
-      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-        <div class="col-10 col-sm-8 col-lg-6">
-          <img src="./pics/05main.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="450" height="300" loading="lazy">
-        </div>
-        <div class="col-lg-6">
-          <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 text-center">Odzyskaj kontrolę nad domowymi finansami!</h1>
-          <br><br>
-          <p class="lead text-center">Nad domowymi finansami da się i trzeba zapanować. Zarządzanie domowymi finansami daje spokój ducha oraz wymierne korzyści. <br>Nigdy więcej sytuacji, gdy pięniądze się rozchodzą a kwota na Twoim koncie ciągle maleje. <br><br>Aplikacja została opracowana po to aby skatalogować oraz zsumować domowe przychody i wydatki. <br>Zrób to razem z nami za pomocą łatwego i intuicyjnego narzędzia online, które jest bezpieczne i zawsze dostępne dla Ciebie, na Twoim komputerze, laptopie, tablecie czy telefonie. <br><br>Zaczynamy? <br><br></p>
+
+      <div class="py-3 col-5 text-center container">
+
+          <div class="p-5 pb-4 border-bottom-0 text-start">
+          <p class="fw-bold mb-0 fs-2">Rejestracja w serwisie: </p>
+   
+           </div>
+
+                <div class="modal-body p-5 pt-0">
+           <form class="">
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control rounded-3" id="registerFloatingInput" placeholder="uzytkownik@serwer.com">
+              <label for="registerFloatingInput">Adres e-mail</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control rounded-3" id="registerFloatingLogin">
+              <label for="registerFloatingLogin">Login</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control rounded-3" id="registerFloatingPass" placeholder="Password">
+              <label for="registerFloatingPass">Hasło</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control rounded-3" id="floatingPasswordSecond" placeholder="Confirm password">
+              <label for="floatingPasswordSecond">Potwierdź hasło</label>
+            </div>
+
           <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-            <a href="./login.html" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary my-1 mb-5" role="button">Zaloguj się!</a>
-            <a href="./register.html" class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-secondary my-1 mb-5" role="button">Zarejestruj się!</a>
+            <a href="./main.html" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary my-5 mb-5" role="button">Zarejestruj</a>
+            <a href="./index.html" class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-secondary my-5 mb-5" role="button">Anuluj</a>
+    
           </div>
-        </div>
+
+          <small class="text-body-secondary">Klikając "Zarejestruj", wyrażasz zgodę na warunki użytkowania oraz regulamin serwisu.</small>
+
+          </form>
       </div>
-    </div>
+ 
+
   </main>
 
   <!-- Footer -->
