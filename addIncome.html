@@ -17,56 +17,45 @@
  
 
 
-  <nav id="navBar">
+    <nav id="navBar">
     <!-- navBar -->
-    <div class="navbar navbar-expand-lg bg-body-tertiary rounded">
-      <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
+
+      <div class="navbar navbar-expand-lg bg-body-tertiary rounded">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#buttonNavbar" aria-controls="buttonNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
   
-        <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
-          <a href="./main.html"><i class="fa-solid fa-house-chimney" style="color: #2861c3;"></i></a>
-          <a class="navbar-brand col-lg-3 me-0" href="./main.html">&nbsp;Budżet online</a>
-          <ul class="navbar-nav col-lg-9 justify-content-lg-end">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Wydatki</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="./addExpense.html">Dodaj wydatek</a></li> 
-                <li><a class="dropdown-item" href="#">Edytuj wydatki</a></li>
-                <li><a class="dropdown-item" href="#">Kategorie wydatków</a></li>
-              </ul>
-            </li>
+          <div class="collapse navbar-collapse d-lg-flex" id="buttonNavbar">
+            <a href="./main.html"><i class="fa-solid fa-house-chimney" style="color: #2861c3;"></i></a>
+            <h1><a class="navbar-brand col-lg-3 me-0" href="./main.html">&nbsp;Budżet online</a></h1>
+            <ul class="navbar-nav col-lg-9 justify-content-lg-end">
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Przychody</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item dropdown-item disabled" href="#">Dodaj przychód</a></li>
-                <li><a class="dropdown-item" href="#">Edytuj przychody</a></li>
-                <li><a class="dropdown-item" href="#">Kategorie przychodów</a></li>
-              </ul>
-            </li>
+              <li class="nav-item">
+                <a class="btn btn-lg btn-outline-primary m-1" href="./addExpense.html">Nowy wydatek</a>
+              </li>
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Bilans</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="./bilans.html">Aktualny miesiąc</a></li>
-                <li><a class="dropdown-item" href="#">Poprzedni miesiąc</a></li>
-                <li><a class="dropdown-item" href="#">Dowolne / wybierz datę</a></li>
-              </ul>
-            </li>              
+              <li class="nav-item">
+                <a class="btn btn-lg btn-outline-primary m-1 disabled" href="./addIncome.html">Nowy przychód</a>
+              </li>
 
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Ustawienia</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./index.html">Wyloguj</a>
-            </li>
-          </ul>
+              <li class="nav-item">
+                <a class="btn btn-lg btn-outline-primary m-1" href="./bilans.html">Aktualny bilans</a>
+              </li>              
+
+              <li class="nav-item">
+                <a class="btn btn-lg btn-outline-primary m-1" href="#">Ustawienia</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="btn btn-lg btn-outline-primary m-1" href="./index.html">Wyloguj</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
+
+    </nav>
 
   
   <!-- mainPageContent -->
