@@ -12,6 +12,11 @@
 *.xd
 *.zip
 *.bak
+*.pdf
+*.sql
+*.txt
+*.uxf
+help
 design
 Example01
 Example02

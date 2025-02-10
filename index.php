@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	if(isset($_SESSION['logged_id'])){
+		header('Location: main.php');
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +20,7 @@
 
 <body>
 
-   <nav id="navBar">
+  <nav id="navBar">
     <!-- navBar -->
     <div class="navbar navbar-expand-lg bg-body-tertiary rounded">
       <div class="container-fluid">
@@ -22,14 +29,14 @@
         </button>
   
         <div class="collapse navbar-collapse d-lg-flex" id="logNavbar">
-          <a href="./index.html"><i class="fa-solid fa-house-chimney" style="color: #2861c3;"></i></a>
-          <h1><a class="navbar-brand col-lg-3 me-0" href="./index.html">&nbsp;Budżet online</a></h1>
+          <a href="./index.php"><i class="fa-solid fa-house-chimney" style="color: #2861c3;"></i></a>
+          <h1><a class="navbar-brand col-lg-3 me-0" href="./index.php">&nbsp;Budżet online</a></h1>
           <ul class="navbar-nav col-lg-9 justify-content-lg-end">
             <li class="nav-item">
-              <a class="btn btn-lg btn-primary m-1 disabled" href="./login.html">Logowanie</a>
+              <a class="btn btn-lg btn-primary m-1" href="./login.php">Logowanie</a>
             </li>
             <li class="nav-item">
-              <a class="btn btn-lg btn-outline-primary m-1" href="./register.html">Rejestracja</a>
+              <a class="btn btn-lg btn-outline-primary m-1" href="./register.php">Rejestracja</a>
             </li>
           </ul>
         </div>
@@ -39,34 +46,25 @@
   </nav>
 
   
-  <!-- loginPage -->
-  <main id="loginPage">
+  <!-- welcomePage -->
+  <main id="welcomePage">
 
-
-      <div class="py-3 col-5 text-center container">
-        <div class="p-5 pb-4 border-bottom-0">
-          <p class="fw-bold mb-0 fs-2 text-start">Podaj dane użytkownika:</p>
+    <div class="container col-xxl-8 px-4 py-5">
+      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="col-10 col-sm-8 col-lg-6">
+          <img src="./pics/05main.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="450" height="300" loading="lazy">
         </div>
-
-        <div class="modal-body p-5 pt-0">
-          <form class="">
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control rounded-3" id="loginFloatingName">
-              <label for="loginFloatingName">Login</label>
-            </div>
-            <div class="form-floating mb-3">
-              <input type="password" class="form-control rounded-3" id="LoginFloatingPass" placeholder="Password">
-              <label for="LoginFloatingPass">Hasło</label>
-
+        <div class="col-lg-6 text-center">
+          <p class="lead display-6 fw-bold text-center">Odzyskaj kontrolę nad domowymi finansami!</p>
+          <br><br>
+          <p class="lead text-center">Nad domowymi finansami da się i trzeba zapanować. Zarządzanie domowymi finansami daje spokój ducha oraz wymierne korzyści. <br>Nigdy więcej sytuacji, gdy pięniądze się rozchodzą a kwota na Twoim koncie ciągle maleje. <br><br>Aplikacja została opracowana po to aby skatalogować oraz zsumować domowe przychody i wydatki. <br>Zrób to razem z nami za pomocą łatwego i intuicyjnego narzędzia online, które jest bezpieczne i zawsze dostępne dla Ciebie, na Twoim komputerze, laptopie, tablecie czy telefonie. <br><br>Zaczynamy? <br><br></p>
           <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-            <a href="./main.html" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary my-5 mb-5" role="button">Zaloguj się</a>
-            <a href="./index.html" class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-secondary my-5 mb-5" role="button">Anuluj</a>
+            <a href="./login.php" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary my-1 mb-5" role="button">Zaloguj się!</a>
+            <a href="./register.php" class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-secondary my-1 mb-5" role="button">Zarejestruj się!</a>
           </div>
-
-          </form>
+        </div>
       </div>
- 
-
+    </div>
   </main>
 
   <!-- Footer -->

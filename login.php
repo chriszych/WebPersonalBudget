@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION['logged_id'])) {
+	header('Location: main.php');
+	exit();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +21,7 @@
 
 <body>
 
-  <nav id="navBar">
+   <nav id="navBar">
     <!-- navBar -->
     <div class="navbar navbar-expand-lg bg-body-tertiary rounded">
       <div class="container-fluid">
@@ -22,14 +30,14 @@
         </button>
   
         <div class="collapse navbar-collapse d-lg-flex" id="logNavbar">
-          <a href="./index.html"><i class="fa-solid fa-house-chimney" style="color: #2861c3;"></i></a>
-          <h1><a class="navbar-brand col-lg-3 me-0" href="./index.html">&nbsp;Budżet online</a></h1>
+          <a href="./index.php"><i class="fa-solid fa-house-chimney" style="color: #2861c3;"></i></a>
+          <h1><a class="navbar-brand col-lg-3 me-0" href="./index.php">&nbsp;Budżet online</a></h1>
           <ul class="navbar-nav col-lg-9 justify-content-lg-end">
             <li class="nav-item">
-              <a class="btn btn-lg btn-primary m-1" href="./login.html">Logowanie</a>
+              <a class="btn btn-lg btn-primary m-1 disabled" href="./login.php">Logowanie</a>
             </li>
             <li class="nav-item">
-              <a class="btn btn-lg btn-outline-primary m-1 disabled" href="./register.html">Rejestracja</a>
+              <a class="btn btn-lg btn-outline-primary m-1" href="./register.php">Rejestracja</a>
             </li>
           </ul>
         </div>
@@ -39,43 +47,40 @@
   </nav>
 
   
-  <!-- registerPage -->
-  <main id="registerPage">
+  <!-- loginPage -->
+  <main id="loginPage">
 
 
-      <div class="py-3 col-5 text-center container">
+      <div class="py-3 col-12 col-md-8 col-lg-5 text-center container">
+        <div class="p-5 pb-4 border-bottom-0">
+          <p class="error fw-bold mb-0 fs-2 text-start">Podaj dane użytkownika:</p>
+        </div>
 
-          <div class="p-5 pb-4 border-bottom-0 text-start">
-          <p class="fw-bold mb-0 fs-2">Rejestracja w serwisie: </p>
-   
-           </div>
-
-                <div class="modal-body p-5 pt-0">
-           <form class="">
+        <div class="modal-body p-5 pt-0">
+          <form method="post" action="main.php">
             <div class="form-floating mb-3">
-              <input type="email" class="form-control rounded-3" id="registerFloatingInput" placeholder="uzytkownik@serwer.com">
-              <label for="registerFloatingInput">Adres e-mail</label>
+              <input type="text" class="form-control rounded-3" id="loginFloatingName" name="login" <?= isset($_SESSION['bad_attempt']) ? 'value="'.$_SESSION['bad_attempt'].'"' : '' ?>>
+              <label for="loginFloatingName">Login</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="text" class="form-control rounded-3" id="registerFloatingLogin">
-              <label for="registerFloatingLogin">Login</label>
-            </div>
-            <div class="form-floating mb-3">
-              <input type="password" class="form-control rounded-3" id="registerFloatingPass" placeholder="Password">
-              <label for="registerFloatingPass">Hasło</label>
-            </div>
-            <div class="form-floating mb-3">
-              <input type="password" class="form-control rounded-3" id="floatingPasswordSecond" placeholder="Confirm password">
-              <label for="floatingPasswordSecond">Potwierdź hasło</label>
-            </div>
+              <input type="password" class="form-control rounded-3" id="LoginFloatingPass" placeholder="Password" name="pass">
+              <label for="LoginFloatingPass">Hasło</label>
+			  
+			  <p class="text-danger fw-bold">
+			  <?php 
+				if (isset($_SESSION['bad_attempt'])){
+					echo 'Niepoprawny login lub hasło!';
+					unset($_SESSION['bad_attempt']);
+				}
+				?>
+				</p>
 
           <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-            <a href="./main.html" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary my-5 mb-5" role="button">Zarejestruj</a>
-            <a href="./index.html" class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-secondary my-5 mb-5" role="button">Anuluj</a>
-    
+            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary my-1 mb-1 my-md-5 mb-md-5" role="button" type="submit">Zaloguj się</button>
+            <a href="./index.html" class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-secondary my-1 mb-1 my-md-5 mb-md-5" role="button">Anuluj</a>
           </div>
+		  
 
-          <small class="text-body-secondary">Klikając "Zarejestruj", wyrażasz zgodę na warunki użytkowania oraz regulamin serwisu.</small>
 
           </form>
       </div>
