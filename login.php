@@ -59,17 +59,18 @@ if (isset($_SESSION['logged_id'])) {
         <div class="modal-body p-5 pt-0">
           <form method="post" action="main.php">
             <div class="form-floating mb-3">
-              <input type="text" class="form-control rounded-3" id="loginFloatingName" name="login" <?= isset($_SESSION['bad_attempt']) ? 'value="'.$_SESSION['bad_attempt'].'"' : '' ?>>
-              <label for="loginFloatingName">Login</label>
+              <!--<input type="text" class="form-control rounded-3" id="loginFloatingName" name="login" <?= isset($_SESSION['bad_attempt']) ? 'value="'.$_SESSION['bad_attempt'].'"' : '' ?>>-->
+			  <input type="text" class="form-control rounded-3" id="emailFloatingName" placeholder="e-mail" name="email" <?= isset($_SESSION['bad_attempt']) ? 'value="'.$_SESSION['bad_attempt'].'"' : '' ?>>
+              <label for="emailFloatingName">E-mail</label>
             </div>
             <div class="form-floating mb-3">
               <input type="password" class="form-control rounded-3" id="LoginFloatingPass" placeholder="Password" name="pass">
               <label for="LoginFloatingPass">Hasło</label>
-			  
+			  </div>
 			  <p class="text-danger fw-bold">
 			  <?php 
 				if (isset($_SESSION['bad_attempt'])){
-					echo 'Niepoprawny login lub hasło!';
+					echo 'Niepoprawny e-mail lub hasło!';
 					unset($_SESSION['bad_attempt']);
 				}
 				?>
@@ -77,7 +78,7 @@ if (isset($_SESSION['logged_id'])) {
 
           <div class="d-grid gap-2 d-md-flex justify-content-md-center">
             <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary my-1 mb-1 my-md-5 mb-md-5" role="button" type="submit">Zaloguj się</button>
-            <a href="./index.html" class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-secondary my-1 mb-1 my-md-5 mb-md-5" role="button">Anuluj</a>
+            <a href="./index.php" class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-secondary my-1 mb-1 my-md-5 mb-md-5" role="button">Anuluj</a>
           </div>
 		  
 

@@ -8,13 +8,17 @@ $sqlMonthLowLimit = date('Y-m-01 00:00:00');
 
 if(!isset($_SESSION['logged_id'])){
 
-	if(isset($_POST['login'])){
+	//if(isset($_POST['login'])){
+	if(isset($_POST['email'])){
 		
-		$login = filter_input(INPUT_POST, 'login');
+		//$login = filter_input(INPUT_POST, 'login');
+		$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 		$password = filter_input(INPUT_POST, 'pass');
 		
-		$userQuery =  $db->prepare('SELECT id_user, user_password, user_firstname, user_reg_date FROM users WHERE user_login = :login');
-		$userQuery->bindValue(':login', $login, PDO::PARAM_STR);
+		//$userQuery =  $db->prepare('SELECT id_user, user_password, user_firstname, user_reg_date FROM users WHERE user_login = :login');
+		$userQuery =  $db->prepare('SELECT id_user, user_password, user_firstname, user_reg_date FROM users WHERE user_email = :email');
+		$userQuery->bindValue(':email', $email, PDO::PARAM_STR);
+		//$userQuery->bindValue(':login', $login, PDO::PARAM_STR);
 		$userQuery->execute();
 		
 		$user = $userQuery->fetch();
@@ -37,7 +41,7 @@ if(!isset($_SESSION['logged_id'])){
 			unset($_SESSION['bad_attempt']);
 		}else{
 			$_SESSION['bad_attempt'] = true;
-			$_SESSION['bad_attempt'] = $login;
+			$_SESSION['bad_attempt'] = $email;
 			$_SESSION['logged_firstname'] = "Nieznajomy";
 			header('Location: login.php');
 			exit();
