@@ -115,7 +115,7 @@
               <label for="registerFloatingInput">Kwota w PLN:</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="datetime-local" id="registerFloatingLogin" min="2000-01-01T00:00" max="<?php echo $nextYear;?>" placeholder="<?php echo $now; ?>" name="datetime" class="form-control rounded-3 <?= (($wrong_date == 1)&&($initial_state == 1)) ? 'border-danger':''?>" <?= isset($_SESSION['form_datetime']) ? 'value="'.$_SESSION['form_datetime'].'"' : '' ?>>
+              <input type="datetime-local" id="registerFloatingLogin" min="2000-01-01T00:00" max="<?php echo $nextYear;?>" placeholder="<?php echo $now; ?>" name="datetime" class="form-control rounded-3 <?= (($wrong_date == 1)&&($initial_state == 1)) ? 'border-danger':''?>" <?= isset($_SESSION['form_datetime']) ? 'value="'.$_SESSION['form_datetime'].'"' : 'value="'.$now.'"' ?>>
               <label for="registerFloatingLogin">Data:</label>
             </div>
 
